@@ -329,10 +329,10 @@ view: period_over_period {
         {% else %}
 
         case when ${TABLE}.date between ${_current_period_selection_start} and ${_current_period_selection_end}
-        then '1 Period: '|| format_date("%m/%d/%Y", ${_current_period_selection_start}) || " -- " || format_date("%m/%d/%Y", ${_current_period_selection_end})
+        then 'Current Period: '|| format_date("%m/%d/%Y", ${_current_period_selection_start}) || " -- " || format_date("%m/%d/%Y", ${_current_period_selection_end})
 
         when ${TABLE}.date between ${_compare_period_selection_start} and ${_compare_period_selection_end}
-        then '2 Period: '|| format_date("%m/%d/%Y", ${_compare_period_selection_start}) || " -- " || format_date("%m/%d/%Y", ${_compare_period_selection_end})
+        then 'Comparison Period: '|| format_date("%m/%d/%Y", ${_compare_period_selection_start}) || " -- " || format_date("%m/%d/%Y", ${_compare_period_selection_end})
 
         else 'Other'
         end
